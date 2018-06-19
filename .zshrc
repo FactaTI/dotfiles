@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/donato/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -20,7 +20,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(node_version rvm ram)
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-DEFAULT_USER=donato
+DEFAULT_USER=$USER
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -99,19 +99,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ruby colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-alias lc='colorls -A'
-alias tree='colorls -A --tree'
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-function cpplugaapp(){ cp .pluga_app_script ../../pluga-api/app_scripts/$(basename $PWD) }
-
-# my git aliases
-alias glod='git log --oneline --decorate'
 
 eval "$(direnv hook zsh)"
